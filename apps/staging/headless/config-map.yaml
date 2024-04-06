@@ -10,7 +10,7 @@ data:
   PORT: '1337'
   STRAPI_TELEMETRY_DISABLED: 'true'
   STRAPI_ADMIN_BACKEND_URL: 'https://headless-next.harrytang.xyz'
-  ADMIN_PATH: 'admin'
+  ADMIN_PATH: 'dash'
   # Database
   DATABASE_CLIENT: 'mysql'
   DATABASE_HOST: 'mariadb-internal.harrytang-staging.svc'
