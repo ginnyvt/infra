@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: headless-ingress
+  namespace: harrytang-staging
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+spec:
+  tls:
+    - hosts:
+        - headless-next.harrytang.xyz
+      secretName: headless-tls
+  rules:
+    - host: headless-next.harrytang.xyz
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: headless-srv
+                port:
+                  number: 1337

@@ -9,7 +9,7 @@ data:
   HOST: '0.0.0.0'
   PORT: '1337'
   STRAPI_TELEMETRY_DISABLED: 'true'
-  STRAPI_ADMIN_BACKEND_URL: 'https://headless-staging.harrytang.xyz'
+  STRAPI_ADMIN_BACKEND_URL: 'https://headless-next.harrytang.xyz'
   ADMIN_PATH: 'admin'
   # Database
   DATABASE_CLIENT: 'mysql'
@@ -25,7 +25,7 @@ data:
   SMTP_FROM: 'no-reply@notify.harrytang.xyz'
   # STORAGE
   STORAGE_HOST: 'assets.harrytang.xyz'
-  STORAGE_ROOT_PATH: 'staging'
+  STORAGE_ROOT_PATH: 'next'
   CF_ACCESS_KEY_ID: 'af6ed96bab6432014daf36f67b608203'
   CF_ENDPOINT: 'https://4389df0f0fbc35755e761a69eaebf297.r2.cloudflarestorage.com'
   CF_BUCKET: 'harrytang'
