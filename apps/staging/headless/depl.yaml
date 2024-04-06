@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: headless-depl
-  namespace: harrytang-staging-staging
+  namespace: harrytang-staging
   annotations:
     reloader.stakater.com/auto: 'true'
 spec:
