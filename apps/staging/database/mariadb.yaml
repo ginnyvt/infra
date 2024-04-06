@@ -5,11 +5,11 @@ metadata:
   namespace: harrytang-staging
 spec:
   rootPasswordSecretKeyRef:
-    name: credentials
+    name: mariadb
     key: root-password
   username: headless
   passwordSecretKeyRef:
-    name: credentials
+    name: mariadb
     key: password
   database: headless
 
