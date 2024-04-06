@@ -13,16 +13,16 @@ data:
   ADMIN_PATH: 'admin'
   # Database
   DATABASE_CLIENT: 'mysql'
-  DATABASE_HOST: 'mysql.harrytang-staging.svc'
+  DATABASE_HOST: 'mariadb-internal.harrytang-staging.svc'
   DATABASE_PORT: '3306'
   DATABASE_NAME: 'headless'
   DATABASE_USERNAME: 'headless'
   DATABASE_SSL: 'false'
   # SMTP
-  SMTP_HOST: 'smtp.mailgun.org'
+  SMTP_HOST: 'smtp.tem.scw.cloud'
   SMTP_PORT: '587'
-  SMTP_USERNAME: 'info@harrytang.xyz'
-  SMTP_FROM: 'info@harrytang.xyz'
+  SMTP_USERNAME: '3da79532-3cf3-4f03-b74c-82f3ee4952d3'
+  SMTP_FROM: 'no-reply@notify.harrytang.xyz'
   # STORAGE
   STORAGE_HOST: 'assets.harrytang.xyz'
   STORAGE_ROOT_PATH: 'staging'
