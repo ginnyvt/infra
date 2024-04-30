@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: cloudflared
+  namespace: harrytang-staging
+spec:
+  interval: 24h
+  chart:
+    spec:
+      chart: cloudflare-tunnel
+      version: '^0.3.0' # this is chart version, not cloudflared version
+      sourceRef:
+        kind: HelmRepository
+        name: cloudflare
+        namespace: harrytang-staging
+      interval: 24h
+  values:
+    replicaCount: 1
+    image:
+      tag: '2023.10.0'
+    cloudflare:
+      tunnelName: harrytang-staging
+      tunnelId: 3e3673b2-a52c-42a8-9dca-b69fa6df430e
+      secretName: tunnel-credentials
+      enableWarp: true
+      ingress:
+        - hostname: https://headless-next.harrytang.xyz
+          service: http://headless-srv:1337
