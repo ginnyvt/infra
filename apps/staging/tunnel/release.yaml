@@ -24,5 +24,5 @@ spec:
       secretName: tunnel-credentials
       enableWarp: true
       ingress:
-        - hostname: https://headless-next.harrytang.xyz
+        - hostname: headless-next.harrytang.xyz
           service: http://headless-srv:1337
