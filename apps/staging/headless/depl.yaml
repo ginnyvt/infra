@@ -21,7 +21,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
             runAsNonRoot: true
-          image: ghcr.io/harrytang/headless:dev-2 # {"$imagepolicy": "harrytang-staging:harrytang-headless"}
+          image: ghcr.io/harrytang/headless:dev-3 # {"$imagepolicy": "harrytang-staging:harrytang-headless"}
           imagePullPolicy: Always
           env:
             - name: DATABASE_PASSWORD
