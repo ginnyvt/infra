@@ -15,6 +15,9 @@ spec:
       labels:
         app: web-depl
     spec:
+      volumes:
+        - name: next-build
+          emptyDir: {}
       containers:
         - name: web
           image: ghcr.io/harrytang/web:main-b0cb998-1714896214 # {"$imagepolicy": "harrytang-staging:web"}
@@ -26,3 +29,6 @@ spec:
                 name: web-env
             - secretRef:
                 name: web-env
+          volumeMounts:
+            - name: next-build
+              mountPath: /app/.next
