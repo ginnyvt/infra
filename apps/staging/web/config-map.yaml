@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-env
+  namespace: harrytang-staging
+data:
+  NEXT_PUBLIC_SITE_URL: 'https://next.harrytang.xyz'
+  NEXT_PUBLIC_SITE_NAME: 'Harry Tang'
+  NEXT_PUBLIC_STRAPI_API_URL: 'https://headless-next.harrytang.xyz'
+  NEXT_PUBLIC_STORAGE_HOST: 'assets.harrytang.xyz'
+  NEXT_PUBLIC_CSE_ID: '001513716353477887135:rfu86mxynj8'
+  NEXT_PUBLIC_PAGE_SIZE: '5'
+  NEXT_PUBLIC_HOME_PAGE_SIZE: '3'
+  STRAPI_API_URL: 'http://strapi:1337'
