@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -6,26 +7,44 @@ metadata:
   annotations:
     reloader.stakater.com/auto: 'true'
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: web-depl
   template:
     metadata:
       labels:
-        app: web-depl
+        app: web1-depl
     spec:
       volumes:
-        - name: next-build
-          emptyDir: {}
+        - name: next-data
+          persistentVolumeClaim:
+            claimName: next-data-pvc
       initContainers:
-        - name: next-build
+        - name: next-data
           image: ghcr.io/harrytang/web:main-b0cb998-1714896214 # {"$imagepolicy": "harrytang-staging:web"}
-          command: ['sh', '-c', 'cp -r /app/.next /app/.build']
+          command: ['/bin/sh', '-c']
+          args:
+            - |
+              BUILD_ID_NEXT=$(cat /app/.next/BUILD_ID)
+              if [ -d "/app/shared/${BUILD_ID_NEXT}" ]; then
+                  echo "Already exist cache for build #${BUILD_ID_NEXT}"
+                  exit 0
+              else
+                echo "Creating cache for build #${BUILD_ID_NEXT}"
+                rm -rf /app/shared/*
+                mkdir -p /app/shared/${BUILD_ID_NEXT}
+                cp -r /app/.next/* /app/shared/
+                echo "Cache created"
+                exit 0
+              fi
+              echo "Deleting old caches..."
+              ls -t /app/shared/ | tail -n +6 | xargs -I {} rm -rf /app/shared/{}
+              echo "Old caches deleted"
           imagePullPolicy: Always
           volumeMounts:
-            - name: next-build
-              mountPath: /app/.build
+            - name: next-data
+              mountPath: /app/shared
       containers:
         - name: web
           image: ghcr.io/harrytang/web:main-b0cb998-1714896214 # {"$imagepolicy": "harrytang-staging:web"}
@@ -38,6 +57,5 @@ spec:
             - secretRef:
                 name: web-env
           volumeMounts:
-            - name: next-build
+            - name: next-data
               mountPath: /app/.next
-              subPath: .next
