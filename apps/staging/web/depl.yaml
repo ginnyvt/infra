@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: next-build
           image: ghcr.io/harrytang/web:main-b0cb998-1714896214 # {"$imagepolicy": "harrytang-staging:web"}
-          command: ['sh', '-c', 'cp -r /app/.next /app/.build']
+          command: ['sh', '-c', 'cp -r /app/.next/ /app/.build']
           imagePullPolicy: Always
           volumeMounts:
             - name: next-build
