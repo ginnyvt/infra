@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        app: web1-depl
+        app: web-depl
     spec:
       volumes:
         - name: next-data
