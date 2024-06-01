@@ -17,4 +17,4 @@ spec:
   values:
     githubConfigUrl: https://github.com/harrytang/web
     githubConfigSecret:
-      githubConfigSecret: gh-token
+      github_token: gh-token
