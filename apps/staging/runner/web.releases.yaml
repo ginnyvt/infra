@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: web-arc-runner-set
+  namespace: harrytang-staging
+spec:
+  interval: 24h
+  chart:
+    spec:
+      chart: gha-runner-scale-set
+      version: '^0.9.2'
+      sourceRef:
+        kind: HelmRepository
+        name: actions-runner-controller
+        namespace: arc-systems
+      interval: 24h
+  values:
+    githubConfigUrl: https://github.com/harrytang/web
+    githubConfigSecret:
+      githubConfigSecret: github-pat
