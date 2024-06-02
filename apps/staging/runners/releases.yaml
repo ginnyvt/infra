@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: web-arc-runner-set
+  name: web-runner-set
   namespace: harrytang-staging
 spec:
   interval: 24h
@@ -15,7 +15,13 @@ spec:
         namespace: arc-systems
       interval: 24h
   values:
-    minRunners: 1
+    containerMode:
+      type: kubernetes
+      kubernetesModeWorkVolumeClaim:
+        accessModes: ['ReadWriteOnce']
+        resources:
+          requests:
+            storage: 1Gi
     githubConfigUrl: https://github.com/harrytang/web
     githubConfigSecret: gh-token
 ---
