@@ -24,5 +24,20 @@ spec:
             storage: 1Gi
     githubConfigUrl: https://github.com/harrytang/web
     githubConfigSecret: gh-token
+    template:
+      spec:
+        # initContainers:
+        #   - name: kube-init
+        #     image: ghcr.io/actions/actions-runner:latest
+        #     command: ['sudo', 'chown', '-R', '1001:123', '/home/runner/_work']
+        #     volumeMounts:
+        #       - name: work
+        #         mountPath: /home/runner/_work
+        securityContext:
+          fsGroup: 123
+        containers:
+          - name: runner
+            image: ghcr.io/actions/actions-runner:latest
+            command: ['/home/runner/run.sh']
 ---
 
