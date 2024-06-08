@@ -33,9 +33,4 @@ spec:
     max_allowed_packet=256M
 
   metrics:
-    enabled: true
-    serviceMonitor:
-      prometheusRelease: kube-prom-stack
-      jobLabel: mariadb-monitoring
-      interval: 10s
-      scrapeTimeout: 10s
+    enabled: false
