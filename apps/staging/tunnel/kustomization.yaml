@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - sealed-secret.yaml
   - repository.yaml
-  - release.yaml
+  # - release.yaml
