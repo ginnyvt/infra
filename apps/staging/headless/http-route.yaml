@@ -32,7 +32,7 @@ spec:
   rules:
     - matches:
         - path:
-            type: Prefix
+            type: PathPrefix
             value: /
       backendRefs:
         - name: headless-srv
