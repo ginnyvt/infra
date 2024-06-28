@@ -26,7 +26,7 @@ spec:
   parentRefs:
     - name: gateway
       namespace: gateway
-      sectionName: harrytang-staging-headless-http
+      sectionName: harrytang-staging-headless-https
   hostnames:
     - headless-next.harrytang.xyz
   rules:
