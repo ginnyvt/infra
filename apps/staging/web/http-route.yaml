@@ -34,10 +34,10 @@ spec:
         - path:
             type: PathPrefix
             value: /
-          headers:
-            - type: RegularExpression
-              name: X-Forwarded-For
-              value: ^(144\.21\.59\.206|2603:c020:c001:bb48:a79b:1d9d:22f9:c85a)$
+          # headers:
+          #   - type: Exact
+          #     name: X-Forwarded-For
+          #     value: '144.21.59.206'
 
       backendRefs:
         - name: web-srv
