@@ -34,10 +34,10 @@ spec:
         - path:
             type: PathPrefix
             value: /
-          # headers:
-          #   - type: Exact
-          #     name: X-Forwarded-For
-          #     value: '144.21.59.206'
+          headers:
+            - type: Exact
+              name: X-Forwarded-For
+              value: '144.21.59.206'
 
       backendRefs:
         - name: web-srv
