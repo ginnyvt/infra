@@ -36,7 +36,7 @@ spec:
             value: /
           headers:
             - type: Exact
-              name: X-Forwarded-For
+              name: Cf-Connecting-Ip
               value: '144.21.59.206'
 
       backendRefs:
