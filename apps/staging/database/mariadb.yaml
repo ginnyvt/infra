@@ -26,9 +26,7 @@ spec:
 
   service:
     type: ClusterIP
-    metadata:
-      labels:
-        app: mariadb
+
   myCnf: |
     [mariadb]
     bind-address=*
