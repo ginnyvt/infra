@@ -6,16 +6,19 @@ metadata:
   annotations:
     reloader.stakater.com/auto: 'true'
   labels:
+    app: headless-depl
     version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: headless-depl
+      version: v1
   template:
     metadata:
       labels:
         app: headless-depl
+        version: v1
     spec:
       containers:
         - name: headless
