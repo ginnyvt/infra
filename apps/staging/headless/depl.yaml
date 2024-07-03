@@ -5,6 +5,8 @@ metadata:
   namespace: harrytang-staging
   annotations:
     reloader.stakater.com/auto: 'true'
+  labels:
+    version: v1
 spec:
   replicas: 1
   selector:
