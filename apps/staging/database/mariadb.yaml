@@ -1,8 +1,11 @@
+# https://github.com/mariadb-operator/mariadb-operator/blob/main/docs/API_REFERENCE.md
 apiVersion: k8s.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
   name: mariadb
   namespace: harrytang-staging
+  labels:
+    app: mariadb
 spec:
   rootPasswordSecretKeyRef:
     name: mariadb
@@ -23,7 +26,9 @@ spec:
 
   service:
     type: ClusterIP
-
+    metadata:
+      labels:
+        app: mariadb
   myCnf: |
     [mariadb]
     bind-address=*
