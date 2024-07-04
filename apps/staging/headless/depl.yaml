@@ -22,6 +22,8 @@ spec:
     spec:
       containers:
         - name: headless
+          ports:
+            - containerPort: 1337
           securityContext:
             runAsUser: 1000
             runAsGroup: 1000
