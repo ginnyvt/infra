@@ -1,0 +1,39 @@
+# https://github.com/mariadb-operator/mariadb-operator/blob/main/docs/API_REFERENCE.md
+apiVersion: k8s.mariadb.com/v1alpha1
+kind: MariaDB
+metadata:
+  name: mariadb
+  namespace: harrytang-prod
+  labels:
+    app: mariadb
+spec:
+  rootPasswordSecretKeyRef:
+    name: mariadb
+    key: root-password
+  username: headless
+  passwordSecretKeyRef:
+    name: mariadb
+    key: password
+  database: headless
+
+  image: mariadb:10.11.7
+  imagePullPolicy: IfNotPresent
+
+  port: 3306
+
+  storage:
+    size: 1Gi
+
+  service:
+    type: ClusterIP
+
+  myCnf: |
+    [mariadb]
+    bind-address=*
+    default_storage_engine=InnoDB
+    binlog_format=row
+    innodb_autoinc_lock_mode=2
+    max_allowed_packet=256M
+
+  metrics:
+    enabled: false
