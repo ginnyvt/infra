@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: headless-depl
+  namespace: harrytang-prod
+  annotations:
+    reloader.stakater.com/auto: 'true'
+  labels:
+    app: headless-depl
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: headless-depl
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: headless-depl
+        version: v1
+    spec:
+      containers:
+        - name: headless
+          ports:
+            - containerPort: 1337
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            runAsNonRoot: true
+          image: ghcr.io/harrytang/headless:v1.0.0 # {"$imagepolicy": "harrytang-prod:headless"}
+          imagePullPolicy: Always
+          env:
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mariadb
+                  key: password
+          envFrom:
+            - secretRef:
+                name: headless-env
+            - configMapRef:
+                name: headless-env
