@@ -26,5 +26,5 @@ data:
   STORAGE_HOST: 'assets.harrytang.xyz'
   STORAGE_ROOT_PATH: 'next'
   CF_ACCESS_KEY_ID: 'af6ed96bab6432014daf36f67b608203'
-  CF_ENDPOINT: 'https://4389df0f0fbc35755e761a69eaebf297.r2.cloudflarestorage.com'
+  CF_ENDPOINT: 'https://assets.harrytang.xyz'
   CF_BUCKET: 'harrytang'
