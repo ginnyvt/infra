@@ -1,0 +1,39 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-http
+  namespace: harrytang-prod
+spec:
+  parentRefs:
+    - name: gateway
+      namespace: gateway
+      sectionName: harrytang-prod-web-http
+  hostnames:
+    - harrytang.xyz
+  rules:
+    - filters:
+        - type: RequestRedirect
+          requestRedirect:
+            scheme: https
+            statusCode: 301
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-https
+  namespace: harrytang-prod
+spec:
+  parentRefs:
+    - name: gateway
+      namespace: gateway
+      sectionName: harrytang-prod-web-https
+  hostnames:
+    - harrytang.xyz
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: web-srv
+          port: 3000
