@@ -37,3 +37,43 @@ spec:
       backendRefs:
         - name: web-srv
           port: 3000
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-www-http
+  namespace: harrytang-prod
+spec:
+  parentRefs:
+    - name: gateway
+      namespace: gateway
+      sectionName: harrytang-prod-web-www-http
+  hostnames:
+    - www.harrytang.xyz
+  rules:
+    - filters:
+        - type: RequestRedirect
+          requestRedirect:
+            scheme: https
+            host: harrytang.xyz
+            statusCode: 301
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-www-https
+  namespace: harrytang-prod
+spec:
+  parentRefs:
+    - name: gateway
+      namespace: gateway
+      sectionName: harrytang-prod-web-www-https
+  hostnames:
+    - www.harrytang.xyz
+  rules:
+    - filters:
+        - type: RequestRedirect
+          requestRedirect:
+            scheme: https
+            host: harrytang.xyz
+            statusCode: 301
