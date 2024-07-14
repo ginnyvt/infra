@@ -55,7 +55,7 @@ spec:
         - type: RequestRedirect
           requestRedirect:
             scheme: https
-            host: harrytang.xyz
+            hostname: harrytang.xyz
             statusCode: 301
 ---
 apiVersion: gateway.networking.k8s.io/v1
@@ -75,5 +75,5 @@ spec:
         - type: RequestRedirect
           requestRedirect:
             scheme: https
-            host: harrytang.xyz
+            hostname: harrytang.xyz
             statusCode: 301
