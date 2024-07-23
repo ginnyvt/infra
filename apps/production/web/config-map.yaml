@@ -12,4 +12,5 @@ data:
   NEXT_PUBLIC_PAGE_SIZE: '5'
   NEXT_PUBLIC_HOME_PAGE_SIZE: '3'
   STRAPI_API_URL: 'http://headless-srv:1337'
+  SITEMAP_SIZE: '500'
   HOSTNAME: '0.0.0.0'
