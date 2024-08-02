@@ -15,5 +15,6 @@ data:
   NEXT_PUBLIC_FAVICON_URL: 'https://assets.harrytang.xyz/favicon.ico'
   NEXT_PUBLIC_ICON_URL: 'https://assets.harrytang.xyz/favicon.png'
   STRAPI_API_URL: 'http://headless-srv:1337'
+  CF_ZONE_ID: 'c29d1f8a6ed704bc2b4d3960b310922f'
   SITEMAP_SIZE: '500'
   HOSTNAME: '0.0.0.0'
