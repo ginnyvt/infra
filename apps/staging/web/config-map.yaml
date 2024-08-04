@@ -14,6 +14,7 @@ data:
   NEXT_PUBLIC_AVATAR_URL: 'https://assets.harrytang.xyz/avatar.png'
   NEXT_PUBLIC_FAVICON_URL: 'https://assets.harrytang.xyz/favicon.ico'
   NEXT_PUBLIC_ICON_URL: 'https://assets.harrytang.xyz/favicon.png'
+  NEXT_PUBLIC_COMMENTBOX_ID: '5740329646948352-proj'
   STRAPI_API_URL: 'http://headless-srv:1337'
   SITEMAP_SIZE: '500'
   CF_ZONE_ID: 'c29d1f8a6ed704bc2b4d3960b310922f'
