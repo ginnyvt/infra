@@ -48,9 +48,9 @@ spec:
               subPath: error_response.html.tmpl
           securityContext:
             readOnlyRootFilesystem: false
-            # runAsUser: 1001
-            # runAsGroup: 1001
-            # runAsNonRoot: true
+            runAsUser: 1001
+            runAsGroup: 1001
+            runAsNonRoot: true
           resources:
             requests:
               cpu: '100m'
