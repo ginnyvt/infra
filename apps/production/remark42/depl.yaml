@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: remark42
   namespace: harrytang-prod
+  annotations:
+    reloader.stakater.com/auto: 'true'
   labels:
     app: remark42
 spec:
