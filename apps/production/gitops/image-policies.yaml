@@ -22,3 +22,15 @@ spec:
   policy:
     semver:
       range: '>=1.0.0'
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: remark42
+  namespace: harrytang-prod
+spec:
+  imageRepositoryRef:
+    name: remark42
+  policy:
+    semver:
+      range: '>=1.13.1'
