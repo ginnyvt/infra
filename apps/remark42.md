@@ -24,8 +24,6 @@ export AUTH_GITHUB_CID="toBeReplaced"
 export AUTH_GITHUB_CSEC="toBeReplaced"
 export AUTH_FACEBOOK_CID="toBeReplaced"
 export AUTH_FACEBOOK_CSEC="toBeReplaced"
-export AUTH_MICROSOFT_CID="toBeReplaced"
-export AUTH_MICROSOFT_CSEC="toBeReplaced"
 export TELEGRAM_TOKEN="toBeReplaced"
 export SECRET=$(openssl rand -base64 32)
 export SMTP_USERNAME="toBeReplaced"
@@ -42,8 +40,6 @@ kubectl create secret generic --dry-run=client \
     --from-literal=AUTH_GITHUB_CSEC=$AUTH_GITHUB_CSEC \
     --from-literal=AUTH_FACEBOOK_CID=$AUTH_FACEBOOK_CID \
     --from-literal=AUTH_FACEBOOK_CSEC=$AUTH_FACEBOOK_CSEC \
-    --from-literal=AUTH_MICROSOFT_CID=$AUTH_MICROSOFT_CID \
-    --from-literal=AUTH_MICROSOFT_CSEC=$AUTH_MICROSOFT_CSEC \
     --from-literal=TELEGRAM_TOKEN=$TELEGRAM_TOKEN \
     --from-literal=SECRET=$SECRET \
     --from-literal=SMTP_USERNAME=$SMTP_USERNAME \
