@@ -37,6 +37,13 @@ spec:
       backendRefs:
         - name: web-srv
           port: 3000
+    - matches:
+        - path:
+            type: Exact
+            value: '/.well-known/microsoft-identity-association.json'
+      backendRefs:
+        - name: wellknown-identity
+          port: 80
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
