@@ -21,6 +21,10 @@ spec:
         version: v1
     spec:
       volumes:
+        - name: next-data
+          persistentVolumeClaim:
+            claimName: next-data-pvc
+      initContainers:
         - name: purge-cf-cache
           image: curlimages/curl:8.9.1 # {"$imagepolicy": "harrytang-prod:curl"}
           command: ['/bin/sh', '-c']
@@ -43,10 +47,6 @@ spec:
                 secretKeyRef:
                   name: web-env
                   key: CF_API_TOKEN
-        - name: next-data
-          persistentVolumeClaim:
-            claimName: next-data-pvc
-      initContainers:
         - name: next-data
           image: ghcr.io/harrytang/web:v1.11.9 # {"$imagepolicy": "harrytang-prod:web"}
           command: ['/bin/sh', '-c']
