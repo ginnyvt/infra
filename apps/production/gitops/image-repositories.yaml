@@ -25,3 +25,12 @@ metadata:
 spec:
   image: umputun/remark42
   interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: curl
+  namespace: harrytang-prod
+spec:
+  image: curlimages/curl
+  interval: 1m0s
