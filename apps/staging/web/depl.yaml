@@ -26,7 +26,7 @@ spec:
             claimName: next-data-pvc
       initContainers:
         - name: next-data
-          image: ghcr.io/ginnyvt/web:main-7cb171e-1724419450 # {"$imagepolicy": "ginny-staging:web"}
+          image: ghcr.io/ginnyvt/web:main-f676799-1724424987 # {"$imagepolicy": "ginny-staging:web"}
           command: ["/bin/sh", "-c"]
           args:
             - |
@@ -51,7 +51,7 @@ spec:
               mountPath: /app/shared
       containers:
         - name: web
-          image: ghcr.io/ginnyvt/web:main-7cb171e-1724419450 # {"$imagepolicy": "ginny-staging:web"}
+          image: ghcr.io/ginnyvt/web:main-f676799-1724424987 # {"$imagepolicy": "ginny-staging:web"}
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
