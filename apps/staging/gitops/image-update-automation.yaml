@@ -1,0 +1,25 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: ginnyvt
+  namespace: ginny-staging
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: ginnyvt-infra
+    namespace: ginny-staging
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: it@harrytang.xyz
+        name: mrgitops
+      messageTemplate: "{{range .Updated.Images}}{{println .}}{{end}}"
+    push:
+      branch: main
+  update:
+    path: ./apps/staging
+    strategy: Setters

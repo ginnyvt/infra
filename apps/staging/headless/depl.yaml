@@ -28,7 +28,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
             runAsNonRoot: true
-          image: ghcr.io/ginnyvt/headless-strapi:main-4d3d3a9-1724412663
+          image: ghcr.io/ginnyvt/headless-strapi:main-4d3d3a9-1724412663 # {"$imagepolicy": "ginny-staging:headless"}
           imagePullPolicy: Always
           env:
             - name: DATABASE_PASSWORD
