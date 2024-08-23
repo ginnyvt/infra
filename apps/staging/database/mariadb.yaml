@@ -3,7 +3,7 @@ apiVersion: k8s.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
   name: mariadb
-  namespace: harrytang-staging
+  namespace: ginny-staging
   labels:
     app: mariadb
 spec:

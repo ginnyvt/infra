@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: headless-depl
-  namespace: harrytang-staging
+  namespace: ginny-staging
   annotations:
-    reloader.stakater.com/auto: 'true'
+    reloader.stakater.com/auto: "true"
   labels:
     app: headless-depl
     version: v1
@@ -21,14 +21,14 @@ spec:
         version: v1
     spec:
       containers:
-        - name: headless
+        - name: strapi
           ports:
             - containerPort: 1337
           securityContext:
             runAsUser: 1000
             runAsGroup: 1000
             runAsNonRoot: true
-          image: ghcr.io/harrytang/headless:main-6cc8e49-1723967418 # {"$imagepolicy": "harrytang-staging:headless"}
+          image: ghcr.io/ginnyvt/headless-strapi:main-4d3d3a9-1724412663
           imagePullPolicy: Always
           env:
             - name: DATABASE_PASSWORD

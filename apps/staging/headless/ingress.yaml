@@ -2,16 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: headless-ingress
-  namespace: harrytang-staging
+  namespace: ginny-staging
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
 spec:
   tls:
     - hosts:
-        - headless-next.harrytang.xyz
+        - cms-staging.ginny.dev
       secretName: headless-tls
   rules:
-    - host: headless-next.harrytang.xyz
+    - host: cms-staging.ginny.dev
       http:
         paths:
           - path: /

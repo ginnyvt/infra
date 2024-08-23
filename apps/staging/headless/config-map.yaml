@@ -2,29 +2,29 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: headless-env
-  namespace: harrytang-staging
+  namespace: ginny-staging
 data:
   # Strapi
-  NODE_ENV: 'production'
-  HOST: '0.0.0.0'
-  PORT: '1337'
-  STRAPI_TELEMETRY_DISABLED: 'true'
-  STRAPI_ADMIN_BACKEND_URL: 'https://headless-next.harrytang.xyz'
+  NODE_ENV: "production"
+  HOST: "0.0.0.0"
+  PORT: "1337"
+  STRAPI_TELEMETRY_DISABLED: "true"
+  STRAPI_ADMIN_BACKEND_URL: "https://cms-staging.ginny.dev"
   # Database
-  DATABASE_CLIENT: 'mysql'
-  DATABASE_HOST: 'mariadb-internal.harrytang-staging.svc'
-  DATABASE_PORT: '3306'
-  DATABASE_NAME: 'headless'
-  DATABASE_USERNAME: 'headless'
-  DATABASE_SSL: 'false'
+  DATABASE_CLIENT: "mysql"
+  DATABASE_HOST: "mariadb-internal.ginny-staging.svc"
+  DATABASE_PORT: "3306"
+  DATABASE_NAME: "headless"
+  DATABASE_USERNAME: "headless"
+  DATABASE_SSL: "false"
   # SMTP
-  SMTP_HOST: 'smtp.tem.scw.cloud'
-  SMTP_PORT: '587'
-  SMTP_USERNAME: '3da79532-3cf3-4f03-b74c-82f3ee4952d3'
-  SMTP_FROM: 'no-reply@notify.harrytang.xyz'
+  SMTP_HOST: "smtp.tem.scw.cloud"
+  SMTP_PORT: "587"
+  SMTP_USERNAME: "da7308ca-d05a-4695-8e7c-f73ac855ef9c"
+  SMTP_FROM: "no-reply@app.ginny.dev"
   # STORAGE
-  STORAGE_HOST: 'assets.harrytang.xyz'
-  STORAGE_ROOT_PATH: 'next'
-  CF_ACCESS_KEY_ID: 'af6ed96bab6432014daf36f67b608203'
-  CF_ENDPOINT: 'https://4389df0f0fbc35755e761a69eaebf297.r2.cloudflarestorage.com'
-  CF_BUCKET: 'harrytang'
+  STORAGE_HOST: "assets.ginny.dev"
+  STORAGE_ROOT_PATH: "staging"
+  CF_ACCESS_KEY_ID: "f95a9a741ec3ff65de4fd7c315123514"
+  CF_ENDPOINT: "https://69d8ed804ba4e99d6a59c1bff745d2bf.r2.cloudflarestorage.com"
+  CF_BUCKET: "headless-strapi"

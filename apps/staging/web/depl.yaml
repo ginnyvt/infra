@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-depl
-  namespace: harrytang-staging
+  namespace: ginny-staging
   annotations:
-    reloader.stakater.com/auto: 'true'
+    reloader.stakater.com/auto: "true"
   labels:
     app: web-depl
     version: v1
@@ -25,31 +25,9 @@ spec:
           persistentVolumeClaim:
             claimName: next-data-pvc
       initContainers:
-        - name: purge-cf-cache
-          image: curlimages/curl:8.9.1 # {"$imagepolicy": "harrytang-staging/curl"}
-          command: ['/bin/sh', '-c']
-          args:
-            - |
-              echo "Purging Cloudflare cache..."
-              curl -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" \
-              -H "Authorization: Bearer ${CF_API_TOKEN}" \
-              -H "Content-Type: application/json" \
-              --data '{"purge_everything":true}'
-              echo "Cloudflare cache purged"
-          env:
-            - name: CF_ZONE_ID
-              valueFrom:
-                configMapKeyRef:
-                  name: web-env
-                  key: CF_ZONE_ID
-            - name: CF_API_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  name: web-env
-                  key: CF_API_TOKEN
         - name: next-data
-          image: ghcr.io/harrytang/web:main-0cb4782-1724043021 # {"$imagepolicy": "harrytang-staging:web"}
-          command: ['/bin/sh', '-c']
+          image: ginnyvt/web:1.1
+          command: ["/bin/sh", "-c"]
           args:
             - |
               BUILD_ID_NEXT=$(cat /app/.next/BUILD_ID)
@@ -73,7 +51,7 @@ spec:
               mountPath: /app/shared
       containers:
         - name: web
-          image: ghcr.io/harrytang/web:main-0cb4782-1724043021 # {"$imagepolicy": "harrytang-staging:web"}
+          image: ghcr.io/ginnyvt/web:main-7cb171e-1724419450
           imagePullPolicy: Always
           ports:
             - containerPort: 3000

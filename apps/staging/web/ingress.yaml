@@ -2,17 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web-ingress
-  namespace: harrytang-staging
+  namespace: ginny-staging
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
-    nginx.ingress.kubernetes.io/whitelist-source-range: '144.21.59.206/32,2603:c020:c001:bb48:a79b:1d9d:22f9:c85a/128'
+    nginx.ingress.kubernetes.io/whitelist-source-range: "144.21.59.206/32,88.112.34.153/32,2603:c020:c001:bb48:a79b:1d9d:22f9:c85a/128"
 spec:
   tls:
     - hosts:
-        - next.harrytang.xyz
+        - staging.ginny.dev
       secretName: web-tls
   rules:
-    - host: next.harrytang.xyz
+    - host: staging.ginny.dev
       http:
         paths:
           - path: /
