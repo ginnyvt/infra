@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: headless-depl
-  namespace: harrytang-prod
+  namespace: ginny-prod
   annotations:
-    reloader.stakater.com/auto: 'true'
+    reloader.stakater.com/auto: "true"
   labels:
     app: headless-depl
     version: v1
@@ -28,7 +28,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
             runAsNonRoot: true
-          image: ghcr.io/harrytang/headless:v1.2.3 # {"$imagepolicy": "harrytang-prod:headless"}
+          image: ghcr.io/ginnyvt/headless-strapi:1.0.0 # {"$imagepolicy": "ginny-prod:headless"}
           imagePullPolicy: Always
           env:
             - name: DATABASE_PASSWORD

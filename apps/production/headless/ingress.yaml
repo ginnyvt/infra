@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: headless-ingress
+  namespace: ginny-prod
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+spec:
+  tls:
+    - hosts:
+        - cms.ginny.dev
+      secretName: headless-tls
+  rules:
+    - host: cms.ginny.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: headless-srv
+                port:
+                  number: 1337

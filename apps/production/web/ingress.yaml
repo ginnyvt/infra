@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-ingress
+  namespace: ginny-prod
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+spec:
+  tls:
+    - hosts:
+        - ginny.dev
+      secretName: web-tls
+  rules:
+    - host: ginny.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-srv
+                port:
+                  number: 3000

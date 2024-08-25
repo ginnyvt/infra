@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: next-data-pvc
-  namespace: harrytang-prod
+  namespace: ginny-prod
 spec:
   accessModes:
     - ReadWriteMany

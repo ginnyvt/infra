@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: headless-env
+  namespace: ginny-prod
+data:
+  # Strapi
+  NODE_ENV: "production"
+  HOST: "0.0.0.0"
+  PORT: "1337"
+  STRAPI_TELEMETRY_DISABLED: "true"
+  STRAPI_ADMIN_BACKEND_URL: "https://cms.ginny.dev"
+  # Database
+  DATABASE_CLIENT: "mysql"
+  DATABASE_HOST: "mariadb-internal.ginny-prod"
+  DATABASE_PORT: "3306"
+  DATABASE_NAME: "headless"
+  DATABASE_USERNAME: "headless"
+  DATABASE_SSL: "false"
+  # SMTP
+  SMTP_HOST: "smtp.tem.scw.cloud"
+  SMTP_PORT: "587"
+  SMTP_USERNAME: "da7308ca-d05a-4695-8e7c-f73ac855ef9c"
+  SMTP_FROM: "no-reply@app.ginny.dev"
+  # STORAGE
+  STORAGE_HOST: "assets.ginny.dev"
+  STORAGE_ROOT_PATH: "prod"
+  CF_ACCESS_KEY_ID: "f95a9a741ec3ff65de4fd7c315123514"
+  CF_ENDPOINT: "https://69d8ed804ba4e99d6a59c1bff745d2bf.r2.cloudflarestorage.com"
+  CF_BUCKET: "headless-strapi"

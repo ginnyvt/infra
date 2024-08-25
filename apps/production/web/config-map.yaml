@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-env
+  namespace: ginny-prod
+data:
+  NEXT_PUBLIC_SITE_URL: "https://ginny.dev"
+  NEXT_PUBLIC_SITE_NAME: "Ginny Tran"
+  NEXT_PUBLIC_STRAPI_API_URL: "https://cms.ginny.dev"
+  NEXT_PUBLIC_STORAGE_HOST: "assets.ginny.dev"
+  NEXT_PUBLIC_PAGE_SIZE: "5"
+  NEXT_PUBLIC_HOME_PAGE_SIZE: "3"
+  NEXT_PUBLIC_AVATAR_URL: "https://assets.ginny.dev/avatar.png"
+  NEXT_PUBLIC_FAVICON_URL: "https://assets.ginny.dev/favicon.ico"
+  NEXT_PUBLIC_ICON_URL: "https://assets.ginny.dev/favicon.png"
+  STRAPI_API_URL: "http://headless-srv:1337"
+  SITEMAP_SIZE: "500"
+  HOSTNAME: "0.0.0.0"

@@ -1,0 +1,20 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: headless
+  namespace: ginny-prod
+spec:
+  image: ghcr.io/ginnyvt/headless-strapi
+  interval: 1m0s
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: web
+  namespace: ginny-prod
+spec:
+  image: ghcr.io/ginnyvt/web
+  interval: 1m0s
+---
+
