@@ -51,7 +51,7 @@ spec:
               mountPath: /app/shared
       containers:
         - name: web
-          image: ghcr.io/ginnyvt/web:1.0.00 # {"$imagepolicy": "ginny-prod:web"}
+          image: ghcr.io/ginnyvt/web:1.0.0 # {"$imagepolicy": "ginny-prod:web"}
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
