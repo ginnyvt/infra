@@ -28,7 +28,7 @@ spec:
             runAsUser: 1000
             runAsGroup: 1000
             runAsNonRoot: true
-          image: ghcr.io/ginnyvt/headless-strapi:v1.0.0 # {"$imagepolicy": "ginny-prod:headless"}
+          image: ghcr.io/ginnyvt/headless-strapi:v.1.0.0 # {"$imagepolicy": "ginny-prod:headless"}
           imagePullPolicy: Always
           env:
             - name: DATABASE_PASSWORD
