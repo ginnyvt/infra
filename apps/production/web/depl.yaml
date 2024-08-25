@@ -26,7 +26,7 @@ spec:
             claimName: next-data-pvc
       initContainers:
         - name: next-data
-          image: ghcr.io/ginnyvt/web:v1.0.0 # {"$imagepolicy": "harrytang-prod:web"}
+          image: ghcr.io/ginnyvt/web:v1.0.0 # {"$imagepolicy": "ginny-prod:web"}
           command: ["/bin/sh", "-c"]
           args:
             - |
