@@ -4,7 +4,7 @@ metadata:
   name: headless-ingress
   namespace: ginny-prod
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+    cert-manager.io/cluster-issuer: zerossl
 spec:
   tls:
     - hosts:
