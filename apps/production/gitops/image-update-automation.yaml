@@ -1,4 +1,4 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta1
+apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: ginnyvt
@@ -17,7 +17,6 @@ spec:
       author:
         email: it@harrytang.xyz
         name: mrgitops
-      messageTemplate: "{{range .Updated.Images}}{{println .}}{{end}}"
     push:
       branch: main
   update:
