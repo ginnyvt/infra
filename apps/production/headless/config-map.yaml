@@ -18,13 +18,13 @@ data:
   DATABASE_USERNAME: "headless"
   DATABASE_SSL: "false"
   # SMTP
-  SMTP_HOST: "smtp.tem.scw.cloud"
-  SMTP_PORT: "587"
-  SMTP_USERNAME: "da7308ca-d05a-4695-8e7c-f73ac855ef9c"
-  SMTP_FROM: "no-reply@app.ginny.dev"
+  SMTP_HOST: "mail.mxspl.me"
+  SMTP_PORT: "465"
+  SMTP_USERNAME: "no-reply@app.ginny.dev"
+  SMTP_FROM: "no-reply@ginny.dev"
   # STORAGE
   STORAGE_HOST: "assets.ginny.dev"
   STORAGE_ROOT_PATH: "prod"
-  CF_ACCESS_KEY_ID: "f95a9a741ec3ff65de4fd7c315123514"
+  CF_ACCESS_KEY_ID: "b0bc37581f1906ca64fe1299472883cc"
   CF_ENDPOINT: "https://69d8ed804ba4e99d6a59c1bff745d2bf.r2.cloudflarestorage.com"
   CF_BUCKET: "headless-strapi"
