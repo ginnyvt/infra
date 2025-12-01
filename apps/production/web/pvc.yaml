@@ -5,6 +5,8 @@ metadata:
   name: next-data-pvc
   namespace: ginny-prod
 spec:
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
