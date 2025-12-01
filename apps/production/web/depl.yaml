@@ -27,6 +27,9 @@ spec:
       initContainers:
         - name: next-data
           image: ghcr.io/ginnyvt/web:v.1.0.0 # {"$imagepolicy": "ginny-prod:web"}
+          securityContext:
+            fsGroup: 1001
+            runAsUser: 1001
           command: ["/bin/sh", "-c"]
           args:
             - |
