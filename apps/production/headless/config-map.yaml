@@ -12,15 +12,15 @@ data:
   STRAPI_ADMIN_BACKEND_URL: "https://cms.ginny.dev"
   # Database
   DATABASE_CLIENT: "mysql"
-  DATABASE_HOST: "mariadb-internal.ginny-prod"
+  DATABASE_HOST: "maxscale-galera.galera"
   DATABASE_PORT: "3306"
-  DATABASE_NAME: "headless"
-  DATABASE_USERNAME: "headless"
+  DATABASE_NAME: "ginny_prod_headless"
+  DATABASE_USERNAME: "ginny_prod_headless"
   DATABASE_SSL: "false"
   # SMTP
-  SMTP_HOST: "mail.mxspl.me"
-  SMTP_PORT: "465"
-  SMTP_USERNAME: "no-reply@app.ginny.dev"
+  SMTP_HOST: "smtp.eu.mailgun.org"
+  SMTP_PORT: "587"
+  SMTP_USERNAME: "postmaster@app.ginny.dev"
   SMTP_FROM: "no-reply@ginny.dev"
   # STORAGE
   STORAGE_HOST: "assets.ginny.dev"
