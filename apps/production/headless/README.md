@@ -7,6 +7,7 @@ export ADMIN_JWT_SECRET="$(openssl rand -base64 16)"
 export JWT_SECRET="$(openssl rand -base64 16)"
 export TRANSFER_TOKEN_SALT="$(openssl rand -base64 16)"
 export CF_ACCESS_SECRET="toBeReplaced"
+export DATABASE_PASSWORD="toBeReplaced"
 export SMTP_PASSWORD="toBeReplaced"
 export NAMESPACE="toBeReplaced"
 kubectl create secret generic --dry-run=client \
@@ -18,6 +19,7 @@ kubectl create secret generic --dry-run=client \
     --from-literal=JWT_SECRET=$JWT_SECRET \
     --from-literal=TRANSFER_TOKEN_SALT=$TRANSFER_TOKEN_SALT \
     --from-literal=CF_ACCESS_SECRET=$CF_ACCESS_SECRET \
+    --from-literal=DATABASE_PASSWORD=$DATABASE_PASSWORD \
     --from-literal=SMTP_PASSWORD=$SMTP_PASSWORD \
     -o yaml \
     | kubeseal --format=yaml > sealed-secret.yaml
