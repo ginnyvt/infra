@@ -5,9 +5,6 @@ metadata:
   name: next-data-pvc
   namespace: ginny-prod
 spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: longhorn-rwx
   resources:
     requests:
       storage: 1Gi
