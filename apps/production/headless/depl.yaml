@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: headless-depl
+  name: headless
   namespace: ginny-prod
   annotations:
     reloader.stakater.com/auto: "true"
@@ -12,12 +12,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: headless-depl
+      app: headless
       version: v1
   template:
     metadata:
       labels:
-        app: headless-depl
+        app: headless
         version: v1
     spec:
       containers:
