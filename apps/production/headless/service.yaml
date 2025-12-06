@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: headless-srv
+  name: headless
   namespace: ginny-prod
 spec:
   selector:
-    app: headless-depl
+    app: headless
   ports:
     - name: http
       protocol: TCP
