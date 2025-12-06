@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        app: web-depl
+        app: web
         version: v1
     spec:
       volumes:
