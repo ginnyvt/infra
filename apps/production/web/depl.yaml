@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-depl
+  name: web
   namespace: ginny-prod
   annotations:
     reloader.stakater.com/auto: "true"
   labels:
-    app: web-depl
+    app: web
     version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-depl
+      app: web
       version: v1
   template:
     metadata:
