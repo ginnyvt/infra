@@ -14,8 +14,8 @@ data:
   DATABASE_CLIENT: "mysql"
   DATABASE_HOST: "maxscale-galera.galera"
   DATABASE_PORT: "3306"
-  DATABASE_NAME: "ginny_prod_headless"
-  DATABASE_USERNAME: "ginny_prod_headless"
+  DATABASE_NAME: "ginny-prod-headless"
+  DATABASE_USERNAME: "ginny-prod-headless"
   DATABASE_SSL: "false"
   # SMTP
   SMTP_HOST: "smtp.eu.mailgun.org"
